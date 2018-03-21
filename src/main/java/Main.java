@@ -2,7 +2,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
@@ -12,9 +11,9 @@ public class Main {
 
     public static void main(String args[]) {
 
-        Map<String, String> countryInformations = new HashMap<String, String>();
+        Map<String, String> countryInformations = null;
         try {
-            countryInformations = mapper.readValue(new URL("http://country.io/capital.json"),HashMap.class);
+            countryInformations = mapper.readValue(new URL("http://country.io/capital.json"), Map.class);
 
         } catch (IOException e) {
             e.printStackTrace();
